@@ -4,6 +4,17 @@ Public Class FormMain
     Private currentChildForm As Form = Nothing
 
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Yêu cầu đăng nhập nhân viên ngay khi khởi chạy phần mềm
+        Me.Hide()
+        Using frm As New FormLogin()
+            If frm.ShowDialog() <> DialogResult.OK Then
+                ' Thoát ứng dụng nếu hủy hoặc tắt form đăng nhập
+                Application.Exit()
+                Return
+            End If
+        End Using
+        Me.Show()
+
         ' Cập nhật nhãn trạng thái kết nối ở thanh StatusStrip dưới cùng
         UpdateStatusLabel()
 
@@ -13,7 +24,6 @@ Public Class FormMain
 
     Public Sub UpdateStatusLabel()
         If Not String.IsNullOrEmpty(SQLDatabase.strConn) Then
-            ' Extract server and database name from connection string for friendly display
             Dim server As String = "SQL Server"
             Dim db As String = "CSDL"
             Try
@@ -22,9 +32,9 @@ Public Class FormMain
                 db = builder.InitialCatalog
             Catch
             End Try
-            lblStatus.Text = $"🔌 Đã kết nối SQL Server: {server} | CSDL: {db}"
+            lblStatus.Text = $"👤 Nhân viên: {SessionState.CurrentHoTen} ({SessionState.CurrentQuyen}) | 🔌 Đã kết nối SQL Server: {server} | CSDL: {db}"
         Else
-            lblStatus.Text = "❌ Chưa kết nối cơ sở dữ liệu"
+            lblStatus.Text = $"👤 Nhân viên: {SessionState.CurrentHoTen} ({SessionState.CurrentQuyen}) | ❌ Chưa kết nối cơ sở dữ liệu"
         End If
     End Sub
 
@@ -48,10 +58,14 @@ Public Class FormMain
 
     ' Menu Handlers
     Private Sub mnuConnect_Click(sender As Object, e As EventArgs) Handles mnuConnect.Click
-        Using frm As New FormConnect()
+        Using frm As New FormLogin()
             If frm.ShowDialog() = DialogResult.OK Then
                 UpdateStatusLabel()
-                ' Reload dashboard or current view
+                ' Tải lại giao dịch hiện tại nếu có để gán nhân viên mới
+                If currentChildForm IsNot Nothing AndAlso currentChildForm.Name = "FormGiaoDich" Then
+                    CType(currentChildForm, FormGiaoDich).UpdateCurrentEmployee()
+                End If
+                ' Hoặc tải lại Dashboard
                 LoadDashboard()
             End If
         End Using

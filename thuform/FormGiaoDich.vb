@@ -11,13 +11,17 @@ Public Class FormGiaoDich
         lblGDSoLuong.Visible = False
         numGDSoLuong.Visible = False
         
-        ' Đặt mặc định Mã nhân viên có sẵn trong hệ thống (Seeded 1: Đại lý Admin)
-        numGDMaNV.Value = 1
+        ' Đặt mặc định Mã nhân viên từ SessionState đã đăng nhập
+        numGDMaNV.Value = SessionState.CurrentMaNV
 
         LoadGDKhachHangCombo()
         LoadGDLoaiTheCombo()
         LoadGiaoDichGrid()
         CalculateGDTotal()
+    End Sub
+
+    Public Sub UpdateCurrentEmployee()
+        numGDMaNV.Value = SessionState.CurrentMaNV
     End Sub
 
     ' Populate customer dropdown
@@ -76,7 +80,7 @@ Public Class FormGiaoDich
         Try
             Dim sql As String = "
                 SELECT gd.MaGD AS [Mã GD], nv.HoTen AS [Nhân Viên], kh.HoTen AS [Khách Hàng], lt.TenNhaMang AS [Nhà Mạng], 
-                       lt.MenhGia AS [Tổng Tiền], gd.NgayGD AS [Ngày GD]
+                       gd.TongTien AS [Tổng Tiền], gd.NgayGD AS [Ngày GD]
                 FROM GiaoDich gd
                 JOIN NhanVien nv ON gd.MaNV = nv.MaNV
                 JOIN KhachHang kh ON gd.MaKH = kh.MaKH
@@ -137,7 +141,7 @@ Public Class FormGiaoDich
 
     Private Sub ClearGDFields()
         selectedGDId = -1
-        numGDMaNV.Value = 1
+        numGDMaNV.Value = SessionState.CurrentMaNV
         txtGDSearch.Clear()
         LoadGDKhachHangCombo()
         LoadGDLoaiTheCombo()
@@ -191,11 +195,12 @@ Public Class FormGiaoDich
             End If
 
             ' 5. Ghi nhận giao dịch vào bảng GiaoDich
-            Dim sqlInsertGD As String = "INSERT INTO GiaoDich (MaNV, MaKH, MaLoai, NgayGD) VALUES (@MaNV, @MaKH, @MaLoai, GETDATE())"
+            Dim sqlInsertGD As String = "INSERT INTO GiaoDich (MaNV, MaKH, MaLoai, NgayGD, TongTien) VALUES (@MaNV, @MaKH, @MaLoai, GETDATE(), @TongTien)"
             SQLDatabase.Execute(sqlInsertGD,
                 New SqlParameter("@MaNV", maNV),
                 New SqlParameter("@MaKH", maKH),
-                New SqlParameter("@MaLoai", maLoai)
+                New SqlParameter("@MaLoai", maLoai),
+                New SqlParameter("@TongTien", tongTien)
             )
 
             ' 6. Trừ số dư ví khách hàng
@@ -225,16 +230,15 @@ Public Class FormGiaoDich
         Dim result = MessageBox.Show("Bạn có muốn hủy giao dịch này và hoàn trả lại số tiền đã thanh toán vào số dư tài khoản của khách hàng không?", "Xác nhận hủy giao dịch", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If result = DialogResult.Yes Then
             Try
-                ' 1. Lấy thông tin khách hàng và mệnh giá thẻ để hoàn trả
+                ' 1. Lấy thông tin khách hàng và tổng tiền giao dịch cũ để hoàn trả
                 Dim dtGD As DataTable = SQLDatabase.GetData("
-                    SELECT gd.MaKH, lt.MenhGia 
-                    FROM GiaoDich gd
-                    JOIN LoaiThe lt ON gd.MaLoai = lt.MaLoai 
-                    WHERE gd.MaGD = @MaGD", New SqlParameter("@MaGD", selectedGDId))
+                    SELECT MaKH, TongTien 
+                    FROM GiaoDich 
+                    WHERE MaGD = @MaGD", New SqlParameter("@MaGD", selectedGDId))
                 
                 If dtGD.Rows.Count > 0 Then
                     Dim maKH As Integer = Convert.ToInt32(dtGD.Rows(0)("MaKH"))
-                    Dim tongTien As Double = Convert.ToDouble(dtGD.Rows(0)("MenhGia"))
+                    Dim tongTien As Double = Convert.ToDouble(dtGD.Rows(0)("TongTien"))
 
                     ' 2. Cộng lại tiền vào ví khách hàng
                     Dim sqlRefund As String = "UPDATE KhachHang SET SoDu = SoDu + @TongTien WHERE MaKH = @MaKH"

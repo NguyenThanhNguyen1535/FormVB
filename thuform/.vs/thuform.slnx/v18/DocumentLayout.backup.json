@@ -1,9 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\FormVB\\thuform\\",
+  "WorkspaceRootPath": "D:\\Ai\\thuform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|d:\\formvb\\thuform\\sqldatabase.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|d:\\ai\\thuform\\formdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|solutionrelative:formdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|d:\\ai\\thuform\\formgiaodich.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|solutionrelative:formgiaodich.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|d:\\ai\\thuform\\formkhachhang.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|solutionrelative:formkhachhang.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|d:\\ai\\thuform\\formloaithe.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|solutionrelative:formloaithe.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|d:\\ai\\thuform\\formlogin.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|solutionrelative:formlogin.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|d:\\ai\\thuform\\formmain.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|solutionrelative:formmain.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|d:\\ai\\thuform\\sqldatabase.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{68EDA450-055B-F965-FD76-96C4CA75B98F}|thuform.vbproj|solutionrelative:sqldatabase.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
@@ -14,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,11 +50,83 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormKhachHang.vb [Design]",
+              "DocumentMoniker": "D:\\Ai\\thuform\\FormKhachHang.vb",
+              "RelativeDocumentMoniker": "FormKhachHang.vb",
+              "ToolTip": "D:\\Ai\\thuform\\FormKhachHang.vb [Design]",
+              "RelativeToolTip": "FormKhachHang.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-19T06:18:38.206Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormGiaoDich.vb [Design]",
+              "DocumentMoniker": "D:\\Ai\\thuform\\FormGiaoDich.vb",
+              "RelativeDocumentMoniker": "FormGiaoDich.vb",
+              "ToolTip": "D:\\Ai\\thuform\\FormGiaoDich.vb [Design]",
+              "RelativeToolTip": "FormGiaoDich.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-19T06:18:10.845Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FormDashboard.vb [Design]",
+              "DocumentMoniker": "D:\\Ai\\thuform\\FormDashboard.vb",
+              "RelativeDocumentMoniker": "FormDashboard.vb",
+              "ToolTip": "D:\\Ai\\thuform\\FormDashboard.vb [Design]",
+              "RelativeToolTip": "FormDashboard.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-19T06:17:55.558Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormLoaiThe.vb [Design]",
+              "DocumentMoniker": "D:\\Ai\\thuform\\FormLoaiThe.vb",
+              "RelativeDocumentMoniker": "FormLoaiThe.vb",
+              "ToolTip": "D:\\Ai\\thuform\\FormLoaiThe.vb [Design]",
+              "RelativeToolTip": "FormLoaiThe.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-19T06:18:46.457Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormLogin.vb [Design]",
+              "DocumentMoniker": "D:\\Ai\\thuform\\FormLogin.vb",
+              "RelativeDocumentMoniker": "FormLogin.vb",
+              "ToolTip": "D:\\Ai\\thuform\\FormLogin.vb [Design]",
+              "RelativeToolTip": "FormLogin.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-19T06:20:53.927Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormMain.vb [Design]",
+              "DocumentMoniker": "D:\\Ai\\thuform\\FormMain.vb",
+              "RelativeDocumentMoniker": "FormMain.vb",
+              "ToolTip": "D:\\Ai\\thuform\\FormMain.vb [Design]",
+              "RelativeToolTip": "FormMain.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-19T06:20:55.462Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "SQLDatabase.vb",
-              "DocumentMoniker": "D:\\FormVB\\thuform\\SQLDatabase.vb",
+              "DocumentMoniker": "D:\\Ai\\thuform\\SQLDatabase.vb",
               "RelativeDocumentMoniker": "SQLDatabase.vb",
-              "ToolTip": "D:\\FormVB\\thuform\\SQLDatabase.vb",
+              "ToolTip": "D:\\Ai\\thuform\\SQLDatabase.vb",
               "RelativeToolTip": "SQLDatabase.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",

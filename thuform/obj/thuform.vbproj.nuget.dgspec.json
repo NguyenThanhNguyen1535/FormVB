@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FormVB\\thuform\\thuform.vbproj": {}
+    "D:\\Ai\\thuform\\thuform.vbproj": {}
   },
   "projects": {
-    "D:\\FormVB\\thuform\\thuform.vbproj": {
+    "D:\\Ai\\thuform\\thuform.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FormVB\\thuform\\thuform.vbproj",
+        "projectUniqueName": "D:\\Ai\\thuform\\thuform.vbproj",
         "projectName": "thuform",
-        "projectPath": "D:\\FormVB\\thuform\\thuform.vbproj",
+        "projectPath": "D:\\Ai\\thuform\\thuform.vbproj",
         "packagesPath": "C:\\Users\\vandu\\.nuget\\packages\\",
-        "outputPath": "D:\\FormVB\\thuform\\obj\\",
+        "outputPath": "D:\\Ai\\thuform\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

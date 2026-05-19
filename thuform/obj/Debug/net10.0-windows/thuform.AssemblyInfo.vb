@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("thuform"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+571177fbb3332e3f241c170d38407b7606a02888"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("thuform"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("thuform"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _

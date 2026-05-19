@@ -17,11 +17,10 @@ Partial Class FormKhachHang
 
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim dataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim dataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         pnlHeader = New Panel()
         lblHeaderTitle = New Label()
-        lblHeaderDesc = New Label()
         pnlKHLayout = New TableLayoutPanel()
         pnlKHForm = New Panel()
         lblKHFormTitle = New Label()
@@ -43,51 +42,39 @@ Partial Class FormKhachHang
         pnlHeader.SuspendLayout()
         pnlKHLayout.SuspendLayout()
         pnlKHForm.SuspendLayout()
-        CType(numKHSoDu, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(numKHSoDu, ComponentModel.ISupportInitialize).BeginInit()
         pnlKHGridContainer.SuspendLayout()
         pnlKHSearch.SuspendLayout()
-        CType(dgvKhachHang, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(dgvKhachHang, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        '
+        ' 
         ' pnlHeader
-        '
-        pnlHeader.BackColor = Color.FromArgb(30, 41, 59)
+        ' 
+        pnlHeader.BackColor = Color.FromArgb(CByte(30), CByte(41), CByte(59))
         pnlHeader.Controls.Add(lblHeaderTitle)
-        pnlHeader.Controls.Add(lblHeaderDesc)
         pnlHeader.Dock = DockStyle.Top
         pnlHeader.Location = New Point(0, 0)
         pnlHeader.Name = "pnlHeader"
         pnlHeader.Size = New Size(850, 60)
         pnlHeader.TabIndex = 0
-        '
+        ' 
         ' lblHeaderTitle
-        '
+        ' 
         lblHeaderTitle.AutoSize = True
-        lblHeaderTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        lblHeaderTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
         lblHeaderTitle.ForeColor = Color.White
         lblHeaderTitle.Location = New Point(20, 10)
         lblHeaderTitle.Name = "lblHeaderTitle"
-        lblHeaderTitle.Size = New Size(203, 21)
+        lblHeaderTitle.Size = New Size(328, 32)
         lblHeaderTitle.TabIndex = 0
         lblHeaderTitle.Text = "👥 QUẢN LÝ KHÁCH HÀNG"
-        '
-        ' lblHeaderDesc
-        '
-        lblHeaderDesc.AutoSize = True
-        lblHeaderDesc.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point)
-        lblHeaderDesc.ForeColor = Color.FromArgb(148, 163, 184)
-        lblHeaderDesc.Location = New Point(22, 33)
-        lblHeaderDesc.Name = "lblHeaderDesc"
-        lblHeaderDesc.Size = New Size(307, 13)
-        lblHeaderDesc.TabIndex = 1
-        lblHeaderDesc.Text = "Xem thông tin khách hàng, kiểm tra số dư và tìm kiếm nhanh"
-        '
+        ' 
         ' pnlKHLayout
-        '
+        ' 
         pnlKHLayout.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         pnlKHLayout.ColumnCount = 2
-        pnlKHLayout.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 35.0F))
-        pnlKHLayout.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 65.0F))
+        pnlKHLayout.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 35F))
+        pnlKHLayout.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 65F))
         pnlKHLayout.Controls.Add(pnlKHForm, 0, 0)
         pnlKHLayout.Controls.Add(pnlKHGridContainer, 1, 0)
         pnlKHLayout.Location = New Point(15, 75)
@@ -96,9 +83,9 @@ Partial Class FormKhachHang
         pnlKHLayout.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
         pnlKHLayout.Size = New Size(820, 528)
         pnlKHLayout.TabIndex = 1
-        '
+        ' 
         ' pnlKHForm
-        '
+        ' 
         pnlKHForm.BackColor = Color.White
         pnlKHForm.Controls.Add(lblKHFormTitle)
         pnlKHForm.Controls.Add(lblKHHoTen)
@@ -118,91 +105,90 @@ Partial Class FormKhachHang
         pnlKHForm.Padding = New Padding(15)
         pnlKHForm.Size = New Size(277, 518)
         pnlKHForm.TabIndex = 0
-        '
+        ' 
         ' lblKHFormTitle
-        '
+        ' 
         lblKHFormTitle.AutoSize = True
-        lblKHFormTitle.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
-        lblKHFormTitle.ForeColor = Color.FromArgb(30, 41, 59)
+        lblKHFormTitle.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold)
+        lblKHFormTitle.ForeColor = Color.FromArgb(CByte(30), CByte(41), CByte(59))
         lblKHFormTitle.Location = New Point(15, 10)
         lblKHFormTitle.Name = "lblKHFormTitle"
-        lblKHFormTitle.Size = New Size(160, 20)
+        lblKHFormTitle.Size = New Size(245, 31)
         lblKHFormTitle.TabIndex = 0
         lblKHFormTitle.Text = "Thông tin Khách Hàng"
-        '
+        ' 
         ' lblKHHoTen
-        '
+        ' 
         lblKHHoTen.AutoSize = True
-        lblKHHoTen.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
-        lblKHHoTen.ForeColor = Color.FromArgb(71, 85, 105)
+        lblKHHoTen.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
+        lblKHHoTen.ForeColor = Color.FromArgb(CByte(71), CByte(85), CByte(105))
         lblKHHoTen.Location = New Point(15, 55)
         lblKHHoTen.Name = "lblKHHoTen"
-        lblKHHoTen.Size = New Size(62, 15)
+        lblKHHoTen.Size = New Size(97, 25)
         lblKHHoTen.TabIndex = 1
         lblKHHoTen.Text = "Họ và Tên:"
-        '
+        ' 
         ' txtKHHoTen
-        '
+        ' 
         txtKHHoTen.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtKHHoTen.BorderStyle = BorderStyle.FixedSingle
-        txtKHHoTen.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        txtKHHoTen.Font = New Font("Segoe UI", 9.75F)
         txtKHHoTen.Location = New Point(15, 75)
         txtKHHoTen.Name = "txtKHHoTen"
-        txtKHHoTen.Size = New Size(247, 25)
+        txtKHHoTen.Size = New Size(247, 33)
         txtKHHoTen.TabIndex = 2
-        '
+        ' 
         ' lblKHPhone
-        '
+        ' 
         lblKHPhone.AutoSize = True
-        lblKHPhone.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
-        lblKHPhone.ForeColor = Color.FromArgb(71, 85, 105)
+        lblKHPhone.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
+        lblKHPhone.ForeColor = Color.FromArgb(CByte(71), CByte(85), CByte(105))
         lblKHPhone.Location = New Point(15, 115)
         lblKHPhone.Name = "lblKHPhone"
-        lblKHPhone.Size = New Size(82, 15)
+        lblKHPhone.Size = New Size(131, 25)
         lblKHPhone.TabIndex = 3
         lblKHPhone.Text = "Số Điện Thoại:"
-        '
+        ' 
         ' txtKHPhone
-        '
+        ' 
         txtKHPhone.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtKHPhone.BorderStyle = BorderStyle.FixedSingle
-        txtKHPhone.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        txtKHPhone.Font = New Font("Segoe UI", 9.75F)
         txtKHPhone.Location = New Point(15, 135)
         txtKHPhone.Name = "txtKHPhone"
-        txtKHPhone.Size = New Size(247, 25)
+        txtKHPhone.Size = New Size(247, 33)
         txtKHPhone.TabIndex = 4
-        '
+        ' 
         ' lblKHSoDu
-        '
+        ' 
         lblKHSoDu.AutoSize = True
-        lblKHSoDu.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
-        lblKHSoDu.ForeColor = Color.FromArgb(71, 85, 105)
+        lblKHSoDu.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
+        lblKHSoDu.ForeColor = Color.FromArgb(CByte(71), CByte(85), CByte(105))
         lblKHSoDu.Location = New Point(15, 175)
         lblKHSoDu.Name = "lblKHSoDu"
-        lblKHSoDu.Size = New Size(111, 15)
+        lblKHSoDu.Size = New Size(173, 25)
         lblKHSoDu.TabIndex = 5
         lblKHSoDu.Text = "Số dư tài khoản (₫):"
-        '
+        ' 
         ' numKHSoDu
-        '
+        ' 
         numKHSoDu.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         numKHSoDu.BorderStyle = BorderStyle.FixedSingle
-        numKHSoDu.DecimalPlaces = 0
-        numKHSoDu.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        numKHSoDu.Font = New Font("Segoe UI", 9.75F)
         numKHSoDu.Location = New Point(15, 195)
         numKHSoDu.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         numKHSoDu.Name = "numKHSoDu"
-        numKHSoDu.Size = New Size(247, 25)
+        numKHSoDu.Size = New Size(247, 33)
         numKHSoDu.TabIndex = 6
         numKHSoDu.ThousandsSeparator = True
-        '
+        ' 
         ' btnKHAdd
-        '
-        btnKHAdd.BackColor = Color.FromArgb(16, 185, 129)
+        ' 
+        btnKHAdd.BackColor = Color.FromArgb(CByte(16), CByte(185), CByte(129))
         btnKHAdd.Cursor = Cursors.Hand
         btnKHAdd.FlatAppearance.BorderSize = 0
         btnKHAdd.FlatStyle = FlatStyle.Flat
-        btnKHAdd.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
+        btnKHAdd.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         btnKHAdd.ForeColor = Color.White
         btnKHAdd.Location = New Point(15, 250)
         btnKHAdd.Name = "btnKHAdd"
@@ -210,14 +196,14 @@ Partial Class FormKhachHang
         btnKHAdd.TabIndex = 7
         btnKHAdd.Text = "➕  Thêm"
         btnKHAdd.UseVisualStyleBackColor = False
-        '
+        ' 
         ' btnKHEdit
-        '
-        btnKHEdit.BackColor = Color.FromArgb(59, 130, 246)
+        ' 
+        btnKHEdit.BackColor = Color.FromArgb(CByte(59), CByte(130), CByte(246))
         btnKHEdit.Cursor = Cursors.Hand
         btnKHEdit.FlatAppearance.BorderSize = 0
         btnKHEdit.FlatStyle = FlatStyle.Flat
-        btnKHEdit.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
+        btnKHEdit.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         btnKHEdit.ForeColor = Color.White
         btnKHEdit.Location = New Point(147, 250)
         btnKHEdit.Name = "btnKHEdit"
@@ -225,14 +211,14 @@ Partial Class FormKhachHang
         btnKHEdit.TabIndex = 8
         btnKHEdit.Text = "✏️  Sửa"
         btnKHEdit.UseVisualStyleBackColor = False
-        '
+        ' 
         ' btnKHDelete
-        '
-        btnKHDelete.BackColor = Color.FromArgb(239, 68, 68)
+        ' 
+        btnKHDelete.BackColor = Color.FromArgb(CByte(239), CByte(68), CByte(68))
         btnKHDelete.Cursor = Cursors.Hand
         btnKHDelete.FlatAppearance.BorderSize = 0
         btnKHDelete.FlatStyle = FlatStyle.Flat
-        btnKHDelete.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
+        btnKHDelete.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         btnKHDelete.ForeColor = Color.White
         btnKHDelete.Location = New Point(15, 300)
         btnKHDelete.Name = "btnKHDelete"
@@ -240,14 +226,14 @@ Partial Class FormKhachHang
         btnKHDelete.TabIndex = 9
         btnKHDelete.Text = "🗑️  Xóa"
         btnKHDelete.UseVisualStyleBackColor = False
-        '
+        ' 
         ' btnKHClear
-        '
-        btnKHClear.BackColor = Color.FromArgb(107, 114, 128)
+        ' 
+        btnKHClear.BackColor = Color.FromArgb(CByte(107), CByte(114), CByte(128))
         btnKHClear.Cursor = Cursors.Hand
         btnKHClear.FlatAppearance.BorderSize = 0
         btnKHClear.FlatStyle = FlatStyle.Flat
-        btnKHClear.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
+        btnKHClear.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         btnKHClear.ForeColor = Color.White
         btnKHClear.Location = New Point(147, 300)
         btnKHClear.Name = "btnKHClear"
@@ -255,54 +241,54 @@ Partial Class FormKhachHang
         btnKHClear.TabIndex = 10
         btnKHClear.Text = "🔄  Làm mới"
         btnKHClear.UseVisualStyleBackColor = False
-        '
+        ' 
         ' pnlKHGridContainer
-        '
+        ' 
         pnlKHGridContainer.BackColor = Color.White
         pnlKHGridContainer.Controls.Add(pnlKHSearch)
         pnlKHGridContainer.Controls.Add(dgvKhachHang)
         pnlKHGridContainer.Dock = DockStyle.Fill
-        pnlKHGridContainer.Location = New Point(294, 5)
+        pnlKHGridContainer.Location = New Point(292, 5)
         pnlKHGridContainer.Margin = New Padding(5)
         pnlKHGridContainer.Name = "pnlKHGridContainer"
         pnlKHGridContainer.Padding = New Padding(15)
-        pnlKHGridContainer.Size = New Size(521, 518)
+        pnlKHGridContainer.Size = New Size(523, 518)
         pnlKHGridContainer.TabIndex = 1
-        '
+        ' 
         ' pnlKHSearch
-        '
+        ' 
         pnlKHSearch.Controls.Add(lblKHSearch)
         pnlKHSearch.Controls.Add(txtKHSearch)
         pnlKHSearch.Dock = DockStyle.Top
         pnlKHSearch.Location = New Point(15, 15)
         pnlKHSearch.Name = "pnlKHSearch"
-        pnlKHSearch.Size = New Size(491, 40)
+        pnlKHSearch.Size = New Size(493, 40)
         pnlKHSearch.TabIndex = 0
-        '
+        ' 
         ' lblKHSearch
-        '
+        ' 
         lblKHSearch.AutoSize = True
-        lblKHSearch.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
-        lblKHSearch.ForeColor = Color.FromArgb(71, 85, 105)
+        lblKHSearch.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
+        lblKHSearch.ForeColor = Color.FromArgb(CByte(71), CByte(85), CByte(105))
         lblKHSearch.Location = New Point(3, 10)
         lblKHSearch.Name = "lblKHSearch"
-        lblKHSearch.Size = New Size(65, 17)
+        lblKHSearch.Size = New Size(102, 28)
         lblKHSearch.TabIndex = 0
         lblKHSearch.Text = "Tìm kiếm:"
-        '
+        ' 
         ' txtKHSearch
-        '
+        ' 
         txtKHSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtKHSearch.BorderStyle = BorderStyle.FixedSingle
-        txtKHSearch.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        txtKHSearch.Location = New Point(74, 7)
+        txtKHSearch.Font = New Font("Segoe UI", 9.75F)
+        txtKHSearch.Location = New Point(111, 7)
         txtKHSearch.Name = "txtKHSearch"
         txtKHSearch.PlaceholderText = "Nhập tên hoặc số điện thoại để tìm..."
-        txtKHSearch.Size = New Size(414, 25)
+        txtKHSearch.Size = New Size(377, 33)
         txtKHSearch.TabIndex = 1
-        '
+        ' 
         ' dgvKhachHang
-        '
+        ' 
         dgvKhachHang.AllowUserToAddRows = False
         dgvKhachHang.AllowUserToDeleteRows = False
         dgvKhachHang.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
@@ -310,42 +296,43 @@ Partial Class FormKhachHang
         dgvKhachHang.BorderStyle = BorderStyle.None
         dgvKhachHang.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
         dgvKhachHang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
-        dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
-        dataGridViewCellStyle1.BackColor = Color.FromArgb(15, 23, 42)
-        dataGridViewCellStyle1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
-        dataGridViewCellStyle1.ForeColor = Color.White
-        dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(15, 23, 42)
-        dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
-        dgvKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = Color.FromArgb(CByte(15), CByte(23), CByte(42))
+        DataGridViewCellStyle1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
+        DataGridViewCellStyle1.ForeColor = Color.White
+        DataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(CByte(15), CByte(23), CByte(42))
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        dgvKhachHang.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         dgvKhachHang.ColumnHeadersHeight = 35
-        dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
-        dataGridViewCellStyle2.BackColor = SystemColors.Window
-        dataGridViewCellStyle2.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        dataGridViewCellStyle2.ForeColor = Color.FromArgb(51, 65, 85)
-        dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(239, 246, 255)
-        dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(30, 41, 59)
-        dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
-        dgvKhachHang.DefaultCellStyle = dataGridViewCellStyle2
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = SystemColors.Window
+        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F)
+        DataGridViewCellStyle2.ForeColor = Color.FromArgb(CByte(51), CByte(65), CByte(85))
+        DataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(CByte(239), CByte(246), CByte(255))
+        DataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(CByte(30), CByte(41), CByte(59))
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
+        dgvKhachHang.DefaultCellStyle = DataGridViewCellStyle2
         dgvKhachHang.EnableHeadersVisualStyles = False
-        dgvKhachHang.GridColor = Color.FromArgb(241, 245, 249)
+        dgvKhachHang.GridColor = Color.FromArgb(CByte(241), CByte(245), CByte(249))
         dgvKhachHang.Location = New Point(15, 65)
         dgvKhachHang.Name = "dgvKhachHang"
         dgvKhachHang.ReadOnly = True
         dgvKhachHang.RowHeadersVisible = False
+        dgvKhachHang.RowHeadersWidth = 62
         dgvKhachHang.RowTemplate.Height = 30
         dgvKhachHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        dgvKhachHang.Size = New Size(491, 438)
+        dgvKhachHang.Size = New Size(493, 438)
         dgvKhachHang.TabIndex = 1
-        '
+        ' 
         ' FormKhachHang
-        '
+        ' 
         AutoScaleMode = AutoScaleMode.None
-        BackColor = Color.FromArgb(241, 245, 249)
+        BackColor = Color.FromArgb(CByte(241), CByte(245), CByte(249))
         ClientSize = New Size(850, 618)
         Controls.Add(pnlKHLayout)
         Controls.Add(pnlHeader)
-        Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Font = New Font("Segoe UI", 9F)
         FormBorderStyle = FormBorderStyle.None
         Name = "FormKhachHang"
         Text = "FormKhachHang"
@@ -354,16 +341,16 @@ Partial Class FormKhachHang
         pnlKHLayout.ResumeLayout(False)
         pnlKHForm.ResumeLayout(False)
         pnlKHForm.PerformLayout()
-        CType(numKHSoDu, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(numKHSoDu, ComponentModel.ISupportInitialize).EndInit()
         pnlKHGridContainer.ResumeLayout(False)
-        pnlKHGridContainer.PerformLayout()
-        CType(dgvKhachHang, System.ComponentModel.ISupportInitialize).EndInit()
+        pnlKHSearch.ResumeLayout(False)
+        pnlKHSearch.PerformLayout()
+        CType(dgvKhachHang, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Private WithEvents pnlHeader As Panel
     Private WithEvents lblHeaderTitle As Label
-    Private WithEvents lblHeaderDesc As Label
     Private WithEvents pnlKHLayout As TableLayoutPanel
     Private WithEvents pnlKHForm As Panel
     Private WithEvents lblKHFormTitle As Label

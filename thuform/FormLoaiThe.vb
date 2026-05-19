@@ -158,4 +158,8 @@ Public Class FormLoaiThe
             dgv.Columns(columnName).DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vi-VN")
         End If
     End Sub
+
+    Private Sub lblHeaderDesc_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

@@ -9,10 +9,7 @@ Public Class FormDashboard
     Public Sub LoadDashboardStats()
         Try
             ' 1. Tổng doanh thu (Tính bằng SUM của mệnh giá thẻ trong các giao dịch)
-            Dim totalRevenueObj = SQLDatabase.ExecuteScalar("
-                SELECT SUM(lt.MenhGia) 
-                FROM GiaoDich gd 
-                JOIN LoaiThe lt ON gd.MaLoai = lt.MaLoai;")
+            Dim totalRevenueObj = SQLDatabase.ExecuteScalar("SELECT SUM(TongTien) FROM GiaoDich;")
             Dim totalRevenue As Double = 0
             If totalRevenueObj IsNot DBNull.Value AndAlso totalRevenueObj IsNot Nothing Then
                 totalRevenue = Convert.ToDouble(totalRevenueObj)
@@ -38,7 +35,7 @@ Public Class FormDashboard
             ' 4. Danh sách 10 Giao Dịch Gần Nhất
             Dim sqlRecent As String = "
                 SELECT TOP 10 gd.MaGD AS [Mã GD], nv.HoTen AS [Nhân Viên], kh.HoTen AS [Khách Hàng], 
-                       lt.TenNhaMang AS [Nhà Mạng], lt.MenhGia AS [Số Tiền], gd.NgayGD AS [Ngày GD]
+                       lt.TenNhaMang AS [Nhà Mạng], gd.TongTien AS [Số Tiền], gd.NgayGD AS [Ngày GD]
                 FROM GiaoDich gd
                 JOIN NhanVien nv ON gd.MaNV = nv.MaNV
                 JOIN KhachHang kh ON gd.MaKH = kh.MaKH
@@ -51,7 +48,7 @@ Public Class FormDashboard
 
             ' 5. Doanh thu theo từng nhà mạng
             Dim sqlCarrier As String = "
-                SELECT lt.TenNhaMang AS [Nhà Mạng], SUM(lt.MenhGia) AS [Doanh Thu]
+                SELECT lt.TenNhaMang AS [Nhà Mạng], SUM(gd.TongTien) AS [Doanh Thu]
                 FROM GiaoDich gd
                 JOIN LoaiThe lt ON gd.MaLoai = lt.MaLoai
                 GROUP BY lt.TenNhaMang
